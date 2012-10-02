@@ -19,18 +19,38 @@
 namespace ComcomExtjsModule;
 
 use Zend\ModuleManager\Feature\BootstrapListenerInterface;
+use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\Console\Adapter\AdapterInterface as Console;
 use Zend\EventManager\EventInterface;
 
 /**
  * @author Marco Pivetta <marco.pivetta@com2-gmbh.de>
  */
-class Module implements BootstrapListenerInterface
+class Module implements BootstrapListenerInterface, ConsoleUsageProviderInterface, ConfigProviderInterface
 {
     /**
      * {@inheritDoc}
      */
     public function onBootstrap(EventInterface $e)
     {
-        throw new \BadMethodCallException('Sorry, but this module is yet to be implemented!');
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getConsoleUsage(Console $console)
+    {
+        return array(
+            'extjs install' => 'Downloads and installs the configured Extjs version',
+        );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getConfig()
+    {
+        return require __DIR__ . '/../../config/module.config.php';
     }
 }
