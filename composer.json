@@ -1,0 +1,29 @@
+{
+    "name": "comcom/comcom-extjs-module",
+    "description": "ExtJs loader Module for Zend Framework 2",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "Extjs",
+        "zf2",
+        "zendframework"
+    ],
+    "homepage": "https://github.com/com2-gmbh/ComcomExtjsModule",
+    "authors": [
+        {
+            "name": "Com2 GmbH",
+            "email": "info@com2-gmbh.de",
+            "homepage": "http://www.com2-gmbh.de/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*",
+        "rwoverdijk/assetmanager": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "ComcomExtjsModule": "src"
+        }
+    }
+}
